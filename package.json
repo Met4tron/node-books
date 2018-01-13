@@ -1,0 +1,32 @@
+{
+  "name": "node-books",
+  "version": "1.0.0",
+  "description": "Books server",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec babel-node app"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chalk": "^2.3.0",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "helmet": "^3.9.0",
+    "mongoose": "^4.13.9",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-airbnb": "^2.4.0",
+    "babel-preset-env": "^1.6.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-eslint": "^4.0.1",
+    "gulp-file-cache": "^0.0.1",
+    "gulp-nodemon": "^2.2.1",
+    "nodemon": "^1.14.11"
+  }
+}
