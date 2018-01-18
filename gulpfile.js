@@ -12,7 +12,9 @@ gulp.task('clean', () => {
   ])
 });
 
-gulp.task('build', ['clean', 'lint'] () => {});
+gulp.task('build', ['clean', 'lint'], () => {
+
+});
 
 gulp.task('lint', () => {
   return gulp.src(['src/**/*.js', 'test/**/*.js', '/dist/**/*.js'])
@@ -24,5 +26,5 @@ gulp.task('lint', () => {
 
 gulp.task('test', ['lint'], () => {});
 gulp.task('watch', ['lint'], () => {
-
+  
 });
