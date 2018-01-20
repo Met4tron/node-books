@@ -1,1 +1,4 @@
-module.exports = (err, req, res, next) => console.log(err);
+import Chalk from "chalk";
+module.exports = err => {
+  return console.log(Chalk.red(err));
+};

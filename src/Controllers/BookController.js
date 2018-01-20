@@ -1,6 +1,6 @@
-import Book from '../Models/Book';
+import Book from "../Models/Book";
 
-exports.listBooks = async(req, res, next) => {
+exports.listBooks = async (req, res) => {
   try {
     const allBooks = await Book.find({});
     return res.json({
@@ -12,7 +12,7 @@ exports.listBooks = async(req, res, next) => {
   }
 };
 
-exports.listByAuthor = async(req, res, next) => {
+exports.listByAuthor = async (req, res) => {
   try {
     const authorBooks = await Book.find({
       author: req.query.author
@@ -26,7 +26,7 @@ exports.listByAuthor = async(req, res, next) => {
   }
 };
 
-exports.listByTag = async(req, res, next) => {
+exports.listByTag = async (req, res) => {
   try {
     const booksTag = await Book.find({});
     res.json({
@@ -37,7 +37,7 @@ exports.listByTag = async(req, res, next) => {
   }
 };
 
-exports.listByName = async(req, res, next) => {
+exports.listByName = async (req, res) => {
   try {
     const title = req.query.title;
     const nameBooks = await Book.find({
@@ -49,27 +49,27 @@ exports.listByName = async(req, res, next) => {
   } catch (e) {
     throw new Error(e);
   }
-}
+};
 
-exports.addBook = async (req, res, next) => {
+exports.addBook = async (req, res) => {
   try {
     const bookObject = {
       author: req.body.author,
       title: req.body.title,
       tags: [...req.body.tags]
-    }
+    };
 
-    const includeBook = await Book.save(bookObject);
+    Book.save(bookObject);
+
     return res.json({
-      message: 'Incluido'
+      message: "Incluido"
     });
-
-  } catch(e) {
+  } catch (e) {
     throw new Error(e);
   }
 };
 
-exports.deleteBook = async(req, res, next) => {
+exports.deleteBook = async (req, res) => {
   try {
     const bookDelete = req.query.bookId;
     await Book.remove({
